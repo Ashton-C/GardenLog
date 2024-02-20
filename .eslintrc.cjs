@@ -21,7 +21,7 @@ module.exports = {
   },
 
   // Base config
-  extends: ['@remix-run/eslint-config', 'prettier'],
+  extends: ['@remix-run/eslint-config', 'prettier', 'prettier-plugin-tailwindcss'],
 
   overrides: [
     // React
