@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 
 export default function GrowLog() {
-  const GrowLog = () => {
-    interface GrowEvent {
-      eventName: string;
-      eventTime: string;
-      plant: string;
-      customValue: any;
-    }
-  };
+  interface GrowEvent {
+    eventName: string;
+    eventTime: string;
+    plant: string;
+    customValue: any;
+  }
 
   const [growEvents, setGrowEvents] = useState<GrowEvent[]>([]);
 
