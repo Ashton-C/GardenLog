@@ -53,9 +53,14 @@ export default function GrowLog() {
     console.log('Open Grow Event Form');
   };
   return (
-    <div>
-      <h2>Grow Log</h2>
-      <button onClick={toggleEventForm}>Add Event to Log</button>
+    <div className='container mx-auto p-4 md:w-1/2 w-full'>
+      <h2 className='text-2xl font-semibold mb-4'>Grow Log</h2>
+      <button
+        onClick={toggleEventForm}
+        className='bg-primary text-white font-medium py-2 px-4 rounded-full hover:bg-dark-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary'
+      >
+        Add Event to Log
+      </button>
       {showEventForm ? <GrowEventForm /> : null}
       <GrowLogList growEvents={growEvents} />
     </div>

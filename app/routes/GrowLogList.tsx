@@ -1,7 +1,6 @@
 // GrowLogList.tsx
 
 import React from 'react';
-import '../GrowLogList.css';
 
 interface GrowEvent {
   eventName: string;
