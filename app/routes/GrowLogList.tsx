@@ -1,6 +1,7 @@
+// GrowLogList.tsx
+
 import React from 'react';
-import GrowLog from './GrowLog';
-import growEvents from './GrowLog';
+import '../GrowLogList.css';
 
 interface GrowEvent {
   eventName: string;
@@ -10,28 +11,40 @@ interface GrowEvent {
   customValue: any;
 }
 
-export default function GrowLogList(growEvents: [GrowEvent]) {
-  // Add your component logic here
+interface GrowLogListProps {
+  growEvents: GrowEvent[];
+}
+
+export default function GrowLogList({ growEvents }: GrowLogListProps) {
   return (
     <div>
       <h3>Grow Log List</h3>
-      <ul>
-        {
-        
-            growEvents.length > 0 ? 
-
-        {growEvents.map((event: GrowEvent, index: number) => (
-          <li key={index}>
-            <p>{event.eventName}</p>
-            <p>{event.eventTime}</p>
-            <p>{event.plant}</p>
-            <p>{event.customField}</p>
-            <p>{event.customValue}</p>
-          </li>
-        ))}
-       : null
-        }
-      </ul>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Event Time</th>
+            <th>Plant</th>
+            <th>Custom Field</th>
+            <th>Custom Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {growEvents.length > 0 ? (
+            <>
+              {growEvents.map((event: GrowEvent, index: number) => (
+                <tr key={index}>
+                  <td>{event.eventName}</td>
+                  <td>{event.eventTime}</td>
+                  <td>{event.plant}</td>
+                  <td>{event.customField}</td>
+                  <td>{event.customValue}</td>
+                </tr>
+              ))}
+            </>
+          ) : null}
+        </tbody>
+      </table>
     </div>
   );
 }

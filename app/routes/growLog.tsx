@@ -28,7 +28,7 @@ export default function GrowLog() {
     // Add more sample events here if needed
   ];
 
-  const [growEvents, setGrowEvents] = useState<GrowEvent[]>(sampleGrowEvents);
+  const [growEvents, setGrowEvents] = useState(sampleGrowEvents);
   const [showEventForm, setShowEventForm] = useState<boolean>(false);
 
   function formatDate(date: Date) {
@@ -57,7 +57,7 @@ export default function GrowLog() {
       <h2>Grow Log</h2>
       <button onClick={toggleEventForm}>Add Event to Log</button>
       {showEventForm ? <GrowEventForm /> : null}
-      <GrowLogList growEvents />
+      <GrowLogList growEvents={growEvents} />
     </div>
   );
 }

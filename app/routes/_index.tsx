@@ -1,5 +1,5 @@
 import type { MetaFunction } from '@remix-run/node';
-import GrowLog from './GrowLog';
+import GrowLog from './GrowLog.js';
 
 export const meta: MetaFunction = () => {
   return [
